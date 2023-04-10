@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    color: var(--color-letter);
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+
+:root {
+    --h-nav: 45px;
+    --color-letter: white;
+    --clr-1: #010101;
+    --clr-2: rgb(7, 11, 19);
+    --clr-3: #969c96;
+    --clr-4: #3DF837;
+    --clr-5: #e7a234;
+    --clr-6: rgb(39, 39, 39);
+}
+
+body {
+    background-color: gray;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/**************************************************************************/
+nav {
+    position: fixed;
+    width: 100%;
+    height: var(--h-nav);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+nav>ul {
+    display: flex;
+}
+
+nav>ul>li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: var(--color-letter);
+    font-weight: 300;
+    text-transform: capitalize;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: var(--clr-5);
+}
+
+/**************************************************************************/
+
+.hero {
+    height: 100vh;
+    background-color: var(--clr-2);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.hero .imagen {
+    width: 500px;
+    position: relative;
+}
+
+.hero .imagen .img-shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    transform: translate(-55%, -50%);
+}
+
+.img-foto {
+    position: relative;
+    z-index: 2;
+}
+.presentacion{
+    height: 60vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 400px;
+}
+.presentacion h1{
+    color: white;
+    font-size: 40px;
+    text-transform: capitalize;
+}
+.presentacion h1 span{
+    color: var(--clr-5);
+}
+
+.presentacion h3{
+    margin: 20px 0;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.hero-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.hero-buttons a{
+    padding: 10px 20px;
+    border: solid .5px rgba(255, 255, 255, 0.562);
+    border-radius: 15px;
+}
+.hero-buttons a.selected{
+    background-color: var(--clr-5);
+    color: black;
+    border: none;
+}
+
+/**************************************************************************/
+
+.about {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--clr-2);
+}
+
+.about-information{
+    max-width: 450px;
+}
+.btncv{
+    background-color: var(--clr-5);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+.about-information h2 {
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.about-information p{
+    font-weight: 300;
+    margin: 15px 0;
+    font-size: 15px;
+    color:var(--clr-3);
+} 
+.about-information-list{
+    margin-bottom: 30px;
+}
+.about-information-list li{
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 10px;
+}
+/* Acá le doy estilo al span y al a */
+.about-information-list li a, .about-information-list li span {
+    color: var(--clr-3);
+    font-weight: 300;
+    text-transform: none;
+    
+}
+/**************************************************************************/
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--clr-2);
+}
+
+.skills h2{
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.skills p{
+    color: var(--clr-3);
+    font-weight: 300;
+    text-transform: none;
+    max-width: 650px;
+    text-align: center;
+    margin: 25px 0;
+}
+.skills-information-list{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+    justify-content: center;
+}
+.skill-li{
+    background-color: var(--clr-6);
+    width: 350px;
+    height: fit-content;
+    padding: 20px;
+}
+.skill-li ul {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+}
+
+.skill-li h4{
+    color: var(--clr-5);
+    text-transform: capitalize;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+.skill-particular h5{
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 16px;
+}
+.skill-particular p{
+    all: unset;
+}
+.skill-particular .level{
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    color: var(--clr-3);
+    margin-bottom: 5px;
+}
+
+.skill-particular .description{
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--clr-3);
+}
+.skill-li-proyects {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px
+}
+
+.skill-li-proyects ion-icon{
+    width: 40px;
+    height: 40px;
+    color: var(--clr-5);
+    
+}
+.skill-li-proyects h4{
+    text-transform: capitalize;
+    margin: 5px 0;
+    font-size: 25px;
+}
+
+.skill-li-proyects .github-link{
+    all: unset;
+    font-size: 15px;
+    color: var(--clr-3);
+    display: flex; justify-content: center;align-items: center;
+}
+.skill-li-proyects .github-link ion-icon {
+    width: 15px;height: 15px;
+    color: var(--clr-3);
+    margin-right: 5px;
+}
+
+/**************************************************************************/
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+    background-color: var(--clr-2);
+}
+
+.contact-message {
+    height: 90%;
+    flex-grow: 1;/* para que se acomode enel espacio diaponible jaj... daia miamor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-message form{
+    background-color: var(--clr-6);
+    padding: 20px;
+}
+.contact-message form div {
+    width: 300px;
+}
+.contact-message form div input{
+    background-color: transparent;
+    height: 35px;
+    width: 100%;
+    margin:10px 0;
+    border: solid 1px;
+    padding: 0 8px;
+
+}
+.contact-message form div input:focus{
+    outline: none;
+}
+
+.contact-message form h3{
+    font-weight: 500;
+    font-size: 20px;
+}
+.contact-message form p{
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--clr-3);
+}
+
+#msg{
+    background-color: transparent;
+    border: solid 1px;
+    border-radius: 0;
+    margin: 10px 0;
+    width: 100%;
+    height: 60px;
+}
+
+#button-send{
+    width: 100px;
+}
+
+.contact-socialmedia{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+.contact-socialmedia ul{
+    height: 100%;
+}
+.contact-socialmedia ul li{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2.5% 0;
+    background-color: var(--clr-6);
+    width: 200px;
+    height: 16%;
+    padding: 10px 0 ;
+}
+
+
+footer{
+    background-color: var(--clr-2);
+    font-size: 12px;
+    font-weight: 100;
+    padding: 5px;
+}
