@@ -336,10 +336,16 @@ nav ul li a:hover {
     margin: 10px 0;
     width: 100%;
     height: 60px;
+    padding: 5px 8px;
 }
 
 #button-send{
     width: 100px;
+    transition: .5s;
+}
+
+#button-send:hover{
+    color: var(--clr-5);
 }
 
 .contact-socialmedia{
@@ -347,25 +353,49 @@ nav ul li a:hover {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
 
 }
 
 .contact-socialmedia ul{
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .contact-socialmedia ul li{
     display: flex;
-    justify-content: space-evenly;
-    margin: 2.5% 0;
+    justify-content: left;
+    align-items: left;
+    /* margin: 2.5% 0; */
     background-color: var(--clr-6);
-    width: 200px;
-    height: 16%;
+    width: 50%;
+    height: 18%;
     padding: 10px 0 ;
 }
 
+.detail h4{
+    font-size: 18px;
+    font-weight: 500;
+}
 
+.detail p{
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--clr-3);
+}
+
+ion-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--clr-5);
+    padding: 5px;
+    margin: 0 5px;
+}
+
+/* +************************************************************************************** */
 footer{
     background-color: var(--clr-2);
     font-size: 12px;
