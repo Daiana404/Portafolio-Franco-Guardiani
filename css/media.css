@@ -1,0 +1,24 @@
+@media only screen and (max-width: 700px) {
+    /* Para probar...
+     footer p{
+        color: red;
+    } */
+    .hero {
+        flex-direction: column;
+    }
+    .contact {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .contact-message {
+        width: 80%;
+    }
+    .contact-socialmedia {
+        margin: 50px 0;
+        width: 80%;
+    }
+    .contact-socialmedia ul li {
+        width: 100%;
+        margin: 10px 0;
+    } 
+}
