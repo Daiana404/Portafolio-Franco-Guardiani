@@ -41,7 +41,7 @@
         </section>
 
         <section class="about" id="about">
-            <div class="about-logo">aca un loguito lo hacemos flex para que aparezcan uno al lado del otro</div>
+            <div class="about-logo"><img src="Imagenes/logomundo-removebg-preview.png" class="about-logo-img" alt=""></div>
             <div class="about-information">
                 <h2>about me</h2>
                 <p>
@@ -153,17 +153,14 @@
                     <h3>Leave a message</h3>
                     <p>Please, leave us your query</p>
                     <div class="input-box">
-                        <input type="name" id="name" required="required">
-                        <span>Name</span>
-                        <i></i>
+                        <input type="name" id="name" placeholder="Full name" required>
                     </div>
                     <div class="input-box">
-                        <input type="email" id="email" required="required">
-                        <span>E-mail</span>
-                        <i></i>
+                        <input type="email" id="email" placeholder="E-mail">
                     </div>
-                    <textarea name="user-message" id="msg" cols="20" rows="10" required="required" placeholder="Your message..."></textarea>
-                    <input class="send" type="button" value="Send" id="button-send" onclick="guardarDatos()" >
+                    <textarea name="user-message" id="msg" cols="20" rows="10" required placeholder="Your message..."></textarea>
+                    <input class="send" type="button" value="Send" id="button-send" onclick="obtenerDatos()" >
+                    <!--  -->
                 </form>
             </div>
             <div class="contact-socialmedia">
