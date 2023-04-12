@@ -13,7 +13,7 @@
 
 :root {
     --h-nav: 45px;
-    --color-letter: white;
+    --color-letter: rgb(230, 230, 230);
     --clr-1: #010101;
     --clr-2: rgb(7, 11, 19);
     --clr-3: #969c96;
@@ -59,8 +59,25 @@ nav ul li a {
     font-weight: 300;
     text-transform: capitalize;
     transition: 0.5s;
+    position: relative;
 }
 
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-letter);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: .5s;
+    
+}
+nav ul li a:hover::before {
+    background-color: var(--clr-5);
+    transform: scaleX(1);
+}
 nav ul li a:hover {
     color: var(--clr-5);
 }
@@ -77,7 +94,7 @@ nav ul li a:hover {
 }
 
 .hero .imagen {
-    width: 500px;
+    height: 40%;
     position: relative;
 }
 
@@ -85,13 +102,14 @@ nav ul li a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 600px;
+    height: 100%;
     transform: translate(-55%, -50%);
 }
 
 .img-foto {
     position: relative;
     z-index: 2;
+    height: 100%;
 }
 .presentacion{
     height: 60vh;
@@ -114,6 +132,7 @@ nav ul li a:hover {
     margin: 20px 0;
     font-weight: 300;
     font-size: 15px;
+    color: var(--clr-3);
 }
 
 .hero-buttons {
@@ -121,7 +140,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
+    text-transform: capitalize;
 }
 
 .hero-buttons a{
@@ -141,7 +160,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     background-color: var(--clr-2);
 }
 
@@ -254,12 +273,12 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px
+    margin-top: 40px
 }
 
 .skill-li-proyects ion-icon{
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     color: var(--clr-5);
     
 }
@@ -276,18 +295,32 @@ nav ul li a:hover {
     display: flex; justify-content: center;align-items: center;
 }
 .skill-li-proyects .github-link ion-icon {
-    width: 15px;height: 15px;
+    width: 20px;
+    height: 20px;
     color: var(--clr-3);
     margin-right: 5px;
 }
 
 /**************************************************************************/
+
+/* Esto quita el color del fondo en el autocompletado en los input */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--clr-6) !important;
+}
+
 .contact {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60vh;
     background-color: var(--clr-2);
+    /* Si no utilizo content-box, el padding se hace hacia adentro y no hacia afuera, que es lo que busco */
+    box-sizing: content-box;
+    padding: 60px 0;
 }
 
 .contact-message {
@@ -302,6 +335,8 @@ nav ul li a:hover {
 .contact-message form{
     background-color: var(--clr-6);
     padding: 20px;
+    /* La siguiente línea podes eliminar si querés que todos los elementos del form se ubiquen a la izquierda, sino quedan en el centro */
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
 }
 .contact-message form div {
     width: 300px;
@@ -310,20 +345,25 @@ nav ul li a:hover {
     background-color: transparent;
     height: 35px;
     width: 100%;
-    margin:10px 0;
-    border: solid 1px;
+    /* margin: 15px 0; */
+    /* border: solid 1px; */
     padding: 0 8px;
 
 }
-.contact-message form div input:focus{
+.contact-message form div input:focus, #msg:focus{
     outline: none;
 }
+
 
 .contact-message form h3{
     font-weight: 500;
     font-size: 20px;
+    text-align: left;
+    width: 100%;
 }
 .contact-message form p{
+    text-align: left;
+    width: 100%;
     font-weight: 300;
     font-size: 12px;
     color: var(--clr-3);
@@ -337,11 +377,73 @@ nav ul li a:hover {
     width: 100%;
     height: 60px;
     padding: 5px 8px;
+
+    font-size: 15px;
+    /* Lo siguiente es para que no se pueda cambiar el tamaño del textarea, si querés podes agregar un resize: none y entonces no se puede modificar ni vertical ni horizontalmente. Ahí puse que se pueda modificar el tamaño vertical por ejemplo */
+    resize: vertical;
+    max-height: 200px;
+    min-height: 100px;
 }
+/* %%%%%%%%%%%%%%%%%%%%% Esto solo modifica los input, otro estilo, se puede eliminar %%%%%%%%%%%%%%%%%%%%%% */
+.input-box{
+    width: 100%;
+    margin: 25px 0;
+    position: relative;
+}
+
+.input-box input{
+    font-weight: 500;
+    position: relative;
+    padding: 15px 10px;
+    background-color: transparent;
+    color: var(--clr-6);
+    z-index: 2;
+    font-size: .85rem;
+    outline: none;
+}
+.input-box span{
+    position: absolute;
+    left: 0;
+    color: gray;
+    font-size: .85rem;
+    transition: .5s;
+    pointer-events: none;
+    padding: 10px;
+    z-index: 3;
+    letter-spacing: .04rem;
+}
+.input-box input:valid ~ span, 
+.input-box input:focus ~ span{
+    color: white;
+    transform: translateY(-28px);
+    font-size: .7rem;
+}
+.input-box i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: white;
+    height: 1px;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    transition: .5s;
+    border-radius: 5px;
+}
+.input-box input:valid ~ i, 
+.input-box input:focus ~ i{
+    height: 40px;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 #button-send{
     width: 100px;
     transition: .5s;
+    margin: 15px 0;
+    border: solid 1px;
+    background-color: transparent;
+    padding: 10px;
 }
 
 #button-send:hover{
@@ -355,20 +457,19 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-
 }
 
 .contact-socialmedia ul{
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 .contact-socialmedia ul li{
     display: flex;
     justify-content: left;
-    align-items: left;
+    align-items: center; /* Queda mejor si está centrado el texto en el cuadro gris */
     /* margin: 2.5% 0; */
     background-color: var(--clr-6);
     width: 50%;
@@ -379,6 +480,7 @@ nav ul li a:hover {
 .detail h4{
     font-size: 18px;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .detail p{
@@ -386,19 +488,30 @@ nav ul li a:hover {
     font-weight: 300;
     color: var(--clr-3);
 }
-
-ion-icon {
+/* Tené cuidado cuando pones etiquetas sueltas porque se te modifican todas las etiquetas en el html, te recomiendo que lo hagas en forma de cadena */
+.contact-socialmedia ion-icon {
     width: 30px;
     height: 30px;
-    color: var(--clr-5);
-    padding: 5px;
-    margin: 0 5px;
+    color: var(--clr-6);
+    padding: 10px;
+    background-color: var(--clr-5);
+    border-radius: 50%;
+    margin: 0 20px;
 }
 
 /* +************************************************************************************** */
 footer{
+    border-top: solid 1px rgba(128, 128, 128, 0.288);
     background-color: var(--clr-2);
     font-size: 12px;
-    font-weight: 100;
-    padding: 5px;
+    font-weight: 400;
+    padding: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap;
+}
+footer p, footer a {
+    color: var(--clr-3);
+}
+footer a {
+    border-bottom: solid 1px gray;
 }

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Franco Guardiani</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -26,16 +27,16 @@
         <section class="hero" id="hero">
             <div class="presentacion">
                 <h1>i'm <span>Franco Guardiani</span></h1>
-                <h3>software developer applied to engineering
+                <h3>Software developer applied to engineering
                 </h3>
                 <div class="hero-buttons">
                     <a href="#contact" class="selected">contract me</a>
-                    <a href="cv-franco-guardiani.pdf" download="CV Franco Guardiani 2023">My CV</a>
+                    <a href="cv-franco-guardiani.pdf" download="CV Franco Guardiani 2023">Download my CV</a>
                 </div>
             </div>
             <div class="imagen">
+                <img class="img-shape" src="Imagenes/blob.svg" alt="">
                 <img class="img-foto" src="Imagenes/franco.png" alt="">
-                <img class="img-shape" src="Imagenes/graph.png" alt="">
             </div>
         </section>
 
@@ -148,21 +149,21 @@
 
         <section class="contact" id="contact">
             <div class="contact-message">
-                <form action="nidea">
+                <form class="form" action="nidea">
                     <h3>Leave a message</h3>
                     <p>Please, leave us your query</p>
-                    <div>
-                        <!-- <span>Name</span> -->
-                        <input type="name" id="name" placeholder="Name">
+                    <div class="input-box">
+                        <input type="name" id="name" required="required">
+                        <span>Name</span>
+                        <i></i>
                     </div>
-                    <div>
-                        <!-- <span>Email</span> -->
-                        <input type="text" id="email" placeholder="Email">
+                    <div class="input-box">
+                        <input type="email" id="email" required="required">
+                        <span>E-mail</span>
+                        <i></i>
                     </div>
-                    <div><textarea name="user-message" id="msg" placeholder="Your message..."></textarea></div>
-                    <div>
-                        <input type="button" value="Send" id="button-send" onclick="guardarDatos()" >
-                    </div>
+                    <textarea name="user-message" id="msg" cols="20" rows="10" required="required" placeholder="Your message..."></textarea>
+                    <input class="send" type="button" value="Send" id="button-send" onclick="guardarDatos()" >
                 </form>
             </div>
             <div class="contact-socialmedia">
